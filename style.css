@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0f2027, #000);
+  color: #fff;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.glow {
+  font-size: 3.2rem;
+  animation: glow 2.5s infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00e5ff; }
+  to { text-shadow: 0 0 30px #00e5ff; }
+}
+
+.scroll {
+  margin-top: 40px;
+  opacity: 0.7;
+}
+
+.section {
+  padding: 80px 12%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.06);
+  padding: 25px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.highlight {
+  color: #00e5ff;
+}
+
+.skill {
+  margin: 20px 0;
+}
+
+.bar {
+  height: 10px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #00e5ff, #00ff9c);
+  transition: width 1.2s ease;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.6;
+}
